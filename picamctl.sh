@@ -7,7 +7,7 @@
 portnamepat="tty.usbmodem*" #typical for showmewebcam on Appl OS X
 #portnamepat="ttyACM*" #probably typical for showmewebcam on Linux
 #portnamepat="tty.*"
-runphotobooth = "true"
+runphotobooth="true"
 
 reset
 clear
@@ -55,7 +55,7 @@ else
         done
     echo ""
     echo "Now establishing serial connection using 'screen' ..."
-    if [ "$runphotobooth" != "true" ]; then
+    if [ "$runphotobooth" = "true" ]; then
         # -g causes application to open in background 
         # https://scriptingosx.com/2017/02/the-macos-open-command/
         open -g -a "Photo Booth"
