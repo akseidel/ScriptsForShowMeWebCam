@@ -1,6 +1,11 @@
 #!/bin/bash
-# aks 02/062021
-portnamepat="tty.usbmodem*" #typical for showmewebcam
+# akseidel 02/062021
+# A script automating the steps to run showmewencam's "camera-ctl".
+#
+
+# edit this next line to be the correct text pattern for your computer.
+portnamepat="tty.usbmodem*" #typical for showmewebcam on Appl OS X
+#portnamepat="ttyACM*" #probably typical for showmewebcam on Linux
 #portnamepat="tty.*"
 runphotobooth = "true"
 
@@ -57,8 +62,8 @@ else
     fi
 
     # For some reason screen stuffing the user, password and camera-ctl to
-    # a detached screen does not work without the target screen having been
-    # attached at some point. Here the nest screen into a spawner screen
+    # a detached target screen does not work without the target screen having
+    # been attached at some point. Here the nest screen into a spawner screen
     # trick is used to get around that.   
     screen -dmS spawner
     screen -S spawner -X screen screen -dR thispicam $piusbwebcamport 115200
