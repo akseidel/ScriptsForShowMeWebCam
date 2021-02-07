@@ -1,5 +1,5 @@
 #!/bin/bash
-# akseidel 02/062021
+# akseidel 02/06/2021
 # A script automating the steps to run showmewencam's "camera-ctl".
 #
 
