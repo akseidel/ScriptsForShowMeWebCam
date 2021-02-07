@@ -2,7 +2,7 @@
 
 ## picamctl.sh
 
-The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you.
+The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running the showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you.
 
 **picamctl.sh** automates the following:
 * Determines the USB connected Raspberry Pi Zero showmewebcam's most likely serial device port name.
