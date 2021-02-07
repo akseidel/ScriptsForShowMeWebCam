@@ -17,7 +17,7 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 
 **How To Use**
 
-**picamctl.sh** is made for use on an Apple OS X computer. It probably works on a Linux machine with an edit to remove or change the PhotoBooth feature and with also an edit to change the device name discovery pattern. Similar alterations probably would be required for it to work on a Windows machine. Look online to explain how to perform any step mentioned below that you might not already know how to do.
+**picamctl.sh** is made for use on an Apple OS X computer. It probably works on a Linux machine with an edit to remove or change the PhotoBooth feature and with also an edit to change the device name discovery pattern. Similar alterations probably would be required for it to work on a Windows machine. Look online to explain how to perform any unfamiliar step mentioned below.
 
 * Download **picamctl.sh** to your computer.
 
