@@ -8,13 +8,9 @@ debugpause=$1
 portnamepat="tty.usbmodem*" #typical for showmewebcam on Appl OS X
 #portnamepat="ttyACM*" #probably typical for showmewebcam on Linux
 #portnamepat="tty.*"
-<<<<<<< HEAD
-runphotobooth="true"
-=======
 # The client is an application you want this script to also run. 
 runtheclient="true"
 clientname="Photo Booth"
->>>>>>> Autorun
 
 # initial cleanup
 initclean(){
@@ -106,15 +102,6 @@ option2exit(){
                 break
             fi
         done
-<<<<<<< HEAD
-    echo ""
-    echo "Now establishing serial connection using 'screen' ..."
-    if [ "$runphotobooth" = "true" ]; then
-        # -g causes application to open in background 
-        # https://scriptingosx.com/2017/02/the-macos-open-command/
-        open -g -a "Photo Booth"
-=======
->>>>>>> Autorun
     fi
 }
 
@@ -131,7 +118,7 @@ while [ $countofserialportslist = 0 ]
         chklim=12
         while [ $chk -le $chklim ]
             do
-                echo -ne "  Checking again. Attempt $chk out of $chklim  ... \r"
+                echo -ne "  Checking for a ready showmewebcam. Attempt $chk out of $chklim  ... \r"
                 getportnames
                 if [ $countofserialportslist != 0 ]; then
                     break 2
@@ -139,7 +126,7 @@ while [ $countofserialportslist = 0 ]
                 chk=$(( $chk + 1 ))
                 sleep 2
             done
-        echo "  Run this again when the camera is ready."
+        echo -e "  Run this again when the camera is ready.                             "
         echo ""
         exit 
     done
