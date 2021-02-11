@@ -3,7 +3,7 @@
 # A script automating the steps to run showmewencam's "camera-ctl".
 # Script will print diagnostic information and halt when run with an argument d.
 
-# init per the operasting system
+# init per the operating system
 # portnamepat is the serial device port name pattern
 # The client is an application you want this script to also run.
 # Edit this section accordingly for your computer.
