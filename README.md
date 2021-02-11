@@ -29,8 +29,11 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 * Plug the Raspberry Pi Zero showmewebcam webcam system USB cable into the computer.
 * In the Terminal window type in "**./picamctl.sh**" or "**sh ./picamctl.sh**".
 * If showmewebcam has yet to finish booting, **picamctl.sh** will make a number of attempts to check for a late startup.
+
 ![picamctl waiting](graphics/picamctl_waiting.png)
+
 * The Terminal window should now be logged into the Raspberry Pi Zero showmewebcam system and showing the camera control interface.
+
 ![camera-ctl running](graphics/cameractl_image.png)
 
 ### Shut Down
