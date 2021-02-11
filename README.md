@@ -38,7 +38,7 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 
 ### Details and Comments
 
-* picamctl.sh currently runs under sh.
+* picamctl.sh is composed for sh.
 * When **picamctl.sh** is started the argument d, for example "**./picamctl.sh  d**", the script halts after printing out diagnostic information. This mode can be used for troubleshooting the serial device name it has selected to use for the connection.
 * In this script the remote logging into the Raspberry Pi Zero happens in a detached terminal screen session where the user name "root", the password "root" and the application name "camera-ctl" are passed into the detached screen. Finally, the detached screen is attached, thus making it visible. The timing sometimes does not happen as it should. The result can be an improper connection. Unplug the USB connection and then repeat the startup procedure. 
 
