@@ -2,7 +2,7 @@
 
 ## picamctl.sh
 
-The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running the showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you.
+The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running the showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you. As of this writing, **picamctl.sh** works for Mac OS X systems and is likely to work in some Linux systems with some fixing. It does work on a Raspberry Pi 4 running a Raspbian system. 
 
 **picamctl.sh** automates the following:
 
@@ -18,7 +18,7 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 
 ### How To Use
 
-**picamctl.sh** is made for use on an Apple OS X computer. It is written to comply with sh shell standards. It probably works on a Linux machine with an edit to remove or change the PhotoBooth feature and with also an edit to change the device name discovery pattern. Similar alterations probably would be required for it to work on a Windows machine. Look online to explain how to perform any unfamiliar step mentioned below.
+**picamctl.sh** is made for use on an Apple OS X computer. It is written to comply with sh shell standards.  Look online to explain how to perform any unfamiliar step mentioned below.
 
 * Download **picamctl.sh** to your computer.
 
@@ -45,11 +45,14 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 * Unplug the Raspberry Pi Zero showmewebcam webcam system USB cable from the computer. Unplugging the device powers off the Pi Zero. This is an important step that you might eventually learn the hard way because just terminating the Terminal session without shutting down the Pi Zero leaves the Pi Zero either still running the camera control utility or running in some other unexpected state. Running **picamctl.sh** under those circumstances results in a confused looking screen session.
 * Close out the Terminal window.
 
-### Details and Comments
+### Details, Comments, Troubleshooting
 
 * picamctl.sh is composed for sh.
-* When **picamctl.sh** is started the argument d, for example "**./picamctl.sh  d**", the script halts after printing out diagnostic information. This mode can be used for troubleshooting the serial device name it has selected to use for the connection.
-* In this script the remote logging into the Raspberry Pi Zero happens in a detached terminal screen session where the user name "root", the password "root" and the application name "camera-ctl" are passed into the detached screen. Finally, the detached screen is attached, thus making it visible. The timing sometimes does not happen as it should. The result can be an improper connection. Unplug the USB connection and then repeat the startup procedure. 
+* When **picamctl.sh** is started the argument d, for example "**./picamctl.sh  d**", the script halts after printing out diagnostic information. This mode can be used for troubleshooting the serial device name it has selected to use for the connection. The d argument diagnostic mode halts the script before the script repeatedly tries to see the showmewebcam device finish its booting process. Perform subsequent "**./picamctl.sh  d**" runs to observe the booting process yourself.
+* In this script the remote logging into the Raspberry Pi Zero happens in a detached terminal screen session where the user name "root", the password "root" and the application name "camera-ctl" are passed into the detached screen. Finally, the detached screen is attached, thus making it visible. The timing sometimes does not happen as it should. The result can be an improper connection. Unplug the USB connection and then repeat the startup procedure.
+* As previously mentioned, **picamctl.sh** probably can be made to work on a Linux machine with an edit to remove or change the PhotoBooth feature. Experiments so far on a Raspberry Pi 4 system indicate the script works. Similar alterations might also be possible for it to work on a Windows machine.
+* The quality of the USB cable used for connecting the Raspberry Pi Zero had been found to influence whether or not the Pi Zero serial connection is made or sustained. The host computer also plays into this issue. For example the very cheapest noodle USB cable functions for connecting to an Apple MacBook but fails when connecting to a Raspberry Pi 4. When used with the Raspberry Pi 4 the serial device would register at the Pi 4 perhaps 1 out of 20 times and would always vanish within 5 seconds as is the voltage drop in the very tiny wires used in the cheap cable dropped below a threshold as the Pi Zero started a process drawing slightly more electrical power.
+* For the situation when rerunning **picamctl.sh** is necessary to deal with an unrefreshed "camera-ctl" screen view, unplugging the USB cable is not necessary. The showmewebcam system can remain booted. Instead, press q in the "camera-ctl" interface. This quits the running "camera-ctl" instance. You should see the # prompt at the lower left corner. Depending on the computer OS and how you are starting **picamctl.sh**, you may or may not need to dispose of the unused screen session when you rerun **picamctl.sh** to get a properly running "camera-ctl" screen view.
 
 ### Showmewebcam is found at
 
