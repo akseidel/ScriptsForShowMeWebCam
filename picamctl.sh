@@ -1,5 +1,5 @@
 #!/bin/sh
-# akseidel 02/06/21 02/10/21
+# akseidel 02/06/21 02/10/21 02/13/21
 # A script automating the steps to run showmewencam's "camera-ctl".
 # Script will print diagnostic information and halt when run with an argument d.
 
@@ -18,9 +18,10 @@ initperos(){
     Linux)
         portnamepat="ttyACM"
         #portnamepat="tty*"
-        runtheclient="false"
-        #clientname="???"
+        runtheclient="true"
+        clientname="/usr/bin/webcamoid"
         ;;
+    # Yet to do Windows implementation
     #CYGWIN*|MINGW32*|MSYS*|MINGW*)
     #    ;;
     *)
@@ -30,7 +31,7 @@ initperos(){
         runtheclient="false"
         #clientname="???"
         ;;
-esac
+    esac
 }
 
 # initial cleanup
@@ -45,9 +46,23 @@ initclean(){
 # run the client application
 runclient(){
     if [ "$runtheclient" = "true" ]; then
-        # -g causes application to open in background 
-        # https://scriptingosx.com/2017/02/the-macos-open-command/
-        open -g -a "$clientname"
+        case "$(uname -s)" in
+        Darwin)
+            # -g causes application to open in background 
+            # https://scriptingosx.com/2017/02/the-macos-open-command/
+            open -g -a "$clientname"
+            ;;
+        Linux)
+            # Start a detached screen session running the client app
+            # refered as webcamapp
+            screen -dmS webcamapp "/usr/bin/webcamoid"
+            ;;
+        # Yet to do Windows implementation
+        #CYGWIN*|MINGW32*|MSYS*|MINGW*)
+        #    ;;
+        *)
+            ;;
+        esac
     fi
 }
 
