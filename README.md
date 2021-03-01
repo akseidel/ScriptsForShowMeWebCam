@@ -2,7 +2,7 @@
 
 ## picamctl.sh
 
-The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running the showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you. As of this writing, **picamctl.sh** works for Mac OS X systems and works on a Raspberry Pi 4 running a Raspbian system. It is likely to work in other Linux systems with no or some fixing.  
+The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system whereas running the showmewebcam camera settings utility program, "camera-ctl", requires arcane technical skills to perform a multistep process. The **picamctl.sh** script performs all the required steps for you. As of this writing, **picamctl.sh** works for Mac OS X systems and works on a Raspberry Pi 4 running a Raspbian system and Ubuntu 20.04. It is likely to work in other Linux systems with no or some fixing.  
 
 **picamctl.sh** automates the following:
 
@@ -13,9 +13,11 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 
 **picamctl.sh** also does the following:
 
-* Starts Apple's **PhotoBooth** application. On Linux systems the **Webcamoid** application is started. Alter or remove that application starting feature from the script as needed. **PhotoBooth** comes preloaded on Apple computers. On Linux systems **Webcamoid** will need to be installed. **picamctl.sh** expects to find **Webcamoid** at **/usr/bin/webcamoid** on the Linux computer.
-* Removes all existing Attached and Detached screen instances. Unused screen instances are typically left over by the method used to run "camera-ctl". Alter or remove this feature as needed if you have other screen instances you need to remain. 
+* Starts Apple's **PhotoBooth** application. On Linux systems the **Webcamoid** application is started. Alter or remove that application starting feature from the script as needed or use the **-c** command argument explained later on. **PhotoBooth** comes preloaded on Apple computers. On Linux systems **Webcamoid** will need to be installed. **picamctl.sh** expects to find **Webcamoid** at **/usr/bin/webcamoid** on the Linux computer.
+* Removes all existing Attached and Detached screen instances. Unused screen instances are typically left over by the method used to run "camera-ctl".
 * The Linux implementation in **picamctl.sh** runs the webcam using application, for example **Webcamoid**, in an additional Detached screen. It does not exempt that Detached screen when it removes existing Attached and Detached screen instances. Therefore unlike the Apple OS X implementation, an already running webcam using application, for example **Webcamoid**, previously started by **picamctl.sh** will close and then be restarted.
+* Checks for the required **screen** command existence. Some systems may not have **screen** installed. **picamctl.sh** stops and advises regarding the missing **screen** installation.
+* In Linux **screen** requires root user rights. **picamctl.sh** stops and advises regarding how to run **picamctl.sh** as root user.
 
 ### How To Use
 
@@ -23,14 +25,14 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 
 * Download **picamctl.sh** to your computer and move the file to the directory where you want it stored.
 * In a Terminal session, change to the directory that holds **picamctl.sh**. Then mark **picamctl.sh** as executable using the command **chmod +x picamctl.sh**.
-* If on a Linux system, install **Webcamoid**.
+* If on a Linux system, install **Webcamoid** or your choice of USB webcam video using application.
 
 ### Starting Up
 
 * Open a Terminal window.
 * In the Terminal window change the current directory to be the one where you copied **picamctl.sh**.
 * Plug the Raspberry Pi Zero showmewebcam webcam system USB cable into the computer.
-* In the Terminal window type in "**./picamctl.sh**" or "**sh ./picamctl.sh**".
+* In the Terminal window type in "**./picamctl.sh**" or "**sh ./picamctl.sh**". On Linux systems type in "**sudo ./picamctl.sh**" or "**sudo sh ./picamctl.sh**" to run as root user. The system will prompt for the root user password.
 * If showmewebcam has yet to finish booting, **picamctl.sh** will make a number of attempts to check for a late startup.
 
 <p align="center">
@@ -44,6 +46,7 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 </p>
 
 * On Apple OS X systems the application **PhotoBooth** will start. On Linus systems the application **Webcamoid** will start.
+* The following 2/23/2021 problem description does not apply when using the automatic login build for showmewebcam. There remains a minor problem when using the **-m** manual login mode.  
 * As of this writing, 2/23/2021, there is a problem with the **showmewebcam** system that messes up the serial connection login process when the login occurs after booting. The login process becomes interrupted when this happens. Instead of seeing the camera control as expected one sees a garbled login process. There are two ways to recover from this:
 
   * One method is to terminate, i.e. quit, the **Terminal** session. At this point the **Pi Zero showmewebcam** is still booted. That fact is critical because the intent here is to avoid the just booted condition. Now start a new **Terminal** session and repeat the "**./picamctl.sh**" or "**sh ./picamctl.sh**". The camera control screen you will see may not be 100% intact. If that is the case then press the letter q to quit it. Then enter in "**camera-ctl**" to restart the camera control program.
