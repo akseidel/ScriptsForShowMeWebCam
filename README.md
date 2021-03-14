@@ -35,15 +35,11 @@ The USB Raspberry Pi Zero showmewebcam is a plug-in-and-it-works webcam system w
 * In the Terminal window type in "**./picamctl.sh**" or "**sh ./picamctl.sh**". On Linux systems type in "**sudo ./picamctl.sh**" or "**sudo sh ./picamctl.sh**" to run as root user. The system will prompt for the root user password.
 * If showmewebcam has yet to finish booting, **picamctl.sh** will make a number of attempts to check for a late startup.
 
-<p align="center">
-  <img src="graphics/picamctl_waiting.png?raw=true" alt="picamctl waiting"/>
-</p>
+![picamctl waiting](graphics/picamctl_waiting.png?raw=true)
 
 * The Terminal window should now be logged into the Raspberry Pi Zero showmewebcam system and showing the camera control interface.
 
-<p align="center">
-  <img src="graphics/cameractl_image.png?raw=true" alt="camera-ctl running"/>
-</p>
+![camera-ctl running](graphics/cameractl_image.png?raw=true)
 
 * On Apple OS X systems the application **PhotoBooth** will start. On Linus systems the application **Webcamoid** will start.
 * The following 2/23/2021 problem description does not apply when using the automatic login build for showmewebcam. There remains a minor problem when using the **-m** manual login mode.  
