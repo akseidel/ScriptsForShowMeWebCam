@@ -23,7 +23,7 @@ The USB Raspberry Pi Zero showmewebcam (version 1.8) is a plug-in-and-it-works w
 
 **picamctl.sh** is written to comply with sh shell standards for use on an Apple OS X or a Linux computer. Look online to explain how to perform any unfamiliar steps mentioned below.
 
-* Download [**picamctl.sh**](https://github.com/akseidel/ScriptsForShowMeWebCam/blob/master/picamctl.sh) to your computer. Then move the file to the directory where you want it stored.
+* Download (Right click and select "Save Link as ..." or its equivalent.) [**picamctl.sh**](https://github.com/akseidel/ScriptsForShowMeWebCam/blob/master/picamctl.sh) to your computer. Then move the file to the directory where you want it stored.
 * In a **Terminal** session, change to the directory that holds **picamctl.sh**. Then mark **picamctl.sh** as executable using the command **chmod +x picamctl.sh**.
 * If on a Linux system, install **Webcamoid** or your choice of USB webcam video using application.
 
