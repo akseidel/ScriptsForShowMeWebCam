@@ -2,7 +2,7 @@
 
 ## picamctl.sh
 
-The USB Raspberry Pi Zero showmewebcam (version 1.8) is a plug-in-and-it-works webcam system whereas to run its camera settings utility program,  "**camera-ctl**" , requires arcane technical skills to perform a multi step process. This **picamctl.sh** script automates running the  "**camera-ctl**"  utility. As of this writing, **picamctl.sh** works for Mac OS X systems and works on a Raspberry Pi 4 running a Raspbian system and Ubuntu 20.04. It is likely to work in other Linux systems with no or some fixing.  
+The USB Raspberry Pi Zero showmewebcam (version 1.8) is a plug-in-and-it-works webcam system whereas to run its camera settings utility program,  "**camera-ctl**" , requires arcane technical skills to perform a multi step process. This **picamctl.sh** script automates running the  "**camera-ctl**"  utility. As of this writing, **picamctl.sh** works for Mac OS X systems and works on a Raspberry Pi 4 running a Raspbian system and a 2009 MacBook running Ubuntu 20.04. It is likely to work in other Linux systems with no or some fixing.  
 
 **picamctl.sh** automates the following:
 
